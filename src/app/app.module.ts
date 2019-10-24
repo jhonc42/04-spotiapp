@@ -16,7 +16,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Importar Rutas
 import { ROUTES } from './app.routes';
+
+// Prueba con la api Countries
 import { PruebaapiCountriesSimpleComponent } from './components/pruebaapi-countries-simple/pruebaapi-countries-simple.component';
+
+// Pipe que cree por error
+import { NoPipe } from './pipes/no.pipe';
+
+// Pipes
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,9 @@ import { PruebaapiCountriesSimpleComponent } from './components/pruebaapi-countr
     SearchComponent,
     NavbarComponent,
     ArtistaComponent,
-    PruebaapiCountriesSimpleComponent
+    PruebaapiCountriesSimpleComponent,
+    NoPipe,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,
