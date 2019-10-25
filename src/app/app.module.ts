@@ -26,6 +26,10 @@ import { NoPipe } from './pipes/no.pipe';
 // Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
 
+// Views Compartidas
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +42,9 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     ArtistaComponent,
     PruebaapiCountriesSimpleComponent,
     NoPipe,
-    NoimagePipe
+    NoimagePipe,
+    TarjetasComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
