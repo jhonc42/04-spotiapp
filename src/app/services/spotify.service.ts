@@ -17,7 +17,7 @@ getQuery( query: string) {
   // para la parte del token en authorization sería obtenerlo con un servicio post en el backend sin embargo en la última clase se muestra una solución
   const url = `https://api.spotify.com/v1/${ query }`;
   const headers = new HttpHeaders({
-    Authorization: 'Bearer BQAU-KGzbrJV8M0C4Uc-fl4B43sUnrKI3a8GXT1MczIgxboeL_rinnV9vR0UP2Hl2F4CbHThJR-IbB9lmDQ'
+    Authorization: 'Bearer BQC_BUAhuMtEAr52rQxGYfeBcLzm_p2wIbBKKwfB2bpm3oyBbfIb9BNP9dYZa-_DzbE6uhI6-kmxTbWG8Vc'
   });
   return this.http.get(url, {headers});
 }
@@ -38,7 +38,7 @@ getQuery( query: string) {
                 .pipe( map( data => data['albums'].items ));
 
   }
-  getArtista( termino: string ) {
+  getArtistas( termino: string ) {
     // Código optimizado:
     // const headers = new HttpHeaders({
     //   Authorization: 'Bearer BQCMm51flu9LTjRX0Cf1t6k4bgKtO-DVZj0du57o7phVu6IwXF_FFksSixvM6sQfcqYLNv03Th6s6-cZ-_M'
@@ -53,5 +53,8 @@ getQuery( query: string) {
     // }));
     return this.getQuery(`search?q=${ termino }&type=artist&limit=15`)
                 .pipe( map( data => data['artists'].items));
+  }
+  getArtista( id: string ) {
+    return this.getQuery(`artists/${ id }`);
   }
 }
