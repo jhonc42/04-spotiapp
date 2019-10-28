@@ -17,7 +17,7 @@ getQuery( query: string) {
   // para la parte del token en authorization sería obtenerlo con un servicio post en el backend sin embargo en la última clase se muestra una solución
   const url = `https://api.spotify.com/v1/${ query }`;
   const headers = new HttpHeaders({
-    Authorization: 'Bearer BQC_BUAhuMtEAr52rQxGYfeBcLzm_p2wIbBKKwfB2bpm3oyBbfIb9BNP9dYZa-_DzbE6uhI6-kmxTbWG8Vc'
+    Authorization: 'Bearer BQDGRtwfA1i6D91A0Rosfl808bs94Ro7FoQKCsCWbbYdp0EiefxrXpOcR0QH7PcETTKlM9CTNBHZOPUv4YM'
   });
   return this.http.get(url, {headers});
 }
@@ -56,5 +56,8 @@ getQuery( query: string) {
   }
   getArtista( id: string ) {
     return this.getQuery(`artists/${ id }`);
+  }
+  getTopTracks( id: string ) {
+    return this.getQuery(`artists/${ id }/top-tracks?country=us`).pipe( map( data => data['tracks']));
   }
 }

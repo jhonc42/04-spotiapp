@@ -17,3 +17,35 @@
 </button>
     </div>
 </div>
+<div class="row m-5">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Canción</th>
+                    <th>Vista previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let track of topTracks">
+                    <td>
+                        <img [src]="track.album.images | noimage" alt="" class="img-thumb">
+                    </td>
+                    <td>{{track.album.name}}</td>
+                    <td>{{track.name}}</td>
+                    <td>
+                        <!-- linea para utilizar el tag audio de html5 -->
+                        <!-- <audio [src]="track.preview_url" controls></audio> -->
+                        <!-- de la siguiente forma se puede llamar un track: -->
+                        <!-- <iframe src="https://open.spotify.com/embed?uri=spotify:track:2QpGZOhTCHHiKmpSO9FW4h" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+                        <!-- de la siguiente forma es con el uso del PIPE DOM SEGURO y tomando la variable del objeto que viene del API: -->
+                        <iframe [src]="track.uri | domseguro" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <!-- ruta actual de la api de spotify: https://open.spotify.com/embed/track/1Ab3hhOw1TJWDgO10vlxNZ -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -25,10 +25,12 @@ import { NoPipe } from './pipes/no.pipe';
 
 // Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 // Views Compartidas
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     PruebaapiCountriesSimpleComponent,
     NoPipe,
     NoimagePipe,
+    DomseguroPipe,
     TarjetasComponent,
     LoadingComponent
   ],
